@@ -3,7 +3,8 @@ body {
   background-color: #ddd;
 }
 
-a { /* линия подчёркивания надоела мне, всегда налезала на текст, поэтому полез в ГПТ и вот такой вариант сделал */
+a {
+  /* линия подчёркивания надоела мне, всегда налезала на текст, поэтому полез в ГПТ и вот такой вариант сделал */
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
 }
@@ -21,7 +22,7 @@ a { /* линия подчёркивания надоела мне, всегда
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  font-weight:normal;
+  font-weight: normal;
   font-size: 18px;
 }
 
@@ -33,11 +34,12 @@ a { /* линия подчёркивания надоела мне, всегда
   display: flex;
   justify-content: space-between;
   gap: 32px;
-  
+
   list-style-type: circle;
 }
 
-.header__menu-item:first-child { /* убрал кружок у первого элемента в header__menu */
+.header__menu-item:first-child {
+  /* убрал кружок у первого элемента в header__menu */
   list-style: none;
 }
 
@@ -47,8 +49,9 @@ a { /* линия подчёркивания надоела мне, всегда
 
 .logo {
   width: 130px;
-  
-  position: absolute; /* выровнял логотип прямо по центру header'а (не придумал, как иначе)*/
+
+  position: absolute;
+  /* выровнял логотип прямо по центру header'а (не придумал, как иначе)*/
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -87,7 +90,8 @@ a { /* линия подчёркивания надоела мне, всегда
   height: 385px;
 }
 
-.intro__header { /* отступы 20px между словами */
+.intro__header {
+  /* отступы 20px между словами */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -270,7 +274,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  
+
   font-size: 20px;
   line-height: 1.24em;
 }
@@ -291,7 +295,7 @@ section {
   align-items: start;
 }
 
-.footer__menu-list{
+.footer__menu-list {
   display: flex;
   flex-direction: column;
   align-items: center;
