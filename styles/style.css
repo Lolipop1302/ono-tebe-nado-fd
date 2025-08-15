@@ -1,7 +1,6 @@
 /* место для вашего кода */
-body {
-  background-color: #ddd;
-}
+
+/* Перенёс отсюда body, чтобы сам контент был контрастнее */
 
 a {
   /* линия подчёркивания надоела мне, всегда налезала на текст, поэтому полез в ГПТ и вот такой вариант сделал */
@@ -13,21 +12,23 @@ a {
 
 .header {
   background-color: #ffffff;
-  height: 293px;
   padding: 92px 50px 96px;
 
   position: relative;
 
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  /* Сделал grid вместо flex, теперь лого находится строго по центру без absolute */
+
+  display: grid;  
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
+
   font-weight: normal;
   font-size: 18px;
 }
 
 .header__menu {
   width: 390px;
+  justify-self: start;
 }
 
 .header__menu-list {
@@ -49,16 +50,13 @@ a {
 
 .logo {
   width: 130px;
-
-  position: absolute;
-  /* выровнял логотип прямо по центру header'а (не придумал, как иначе)*/
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  justify-self: center;
 }
 
 .menu__contacts {
-  width: 240px;
+  justify-self: end;
+
+  max-width: 230px; /* переделал ширину и избавился от br */
 
   font-size: 18px;
   font-style: normal;
@@ -70,7 +68,6 @@ a {
 /* <intro> */
 
 .intro {
-  height: 757px;
   padding: 165px 50px 50px;
   color: white;
 
@@ -83,11 +80,8 @@ a {
 
   display: flex;
   flex-direction: column;
+  gap: 106px;
   justify-content: space-between;
-}
-
-.cover {
-  height: 385px;
 }
 
 .intro__header {
@@ -95,6 +89,9 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  /* исправил начертание текста */
+  text-transform: uppercase;
 }
 
 .intro__text {
@@ -115,7 +112,6 @@ a {
 }
 
 .description {
-  height: 51px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -135,6 +131,9 @@ a {
   background: none;
   border: 1px solid white;
   cursor: pointer;
+
+  /* исправил начертание текста */
+  text-transform: uppercase;
 }
 
 /* <intro> */
@@ -146,7 +145,6 @@ section {
 /* <lots> */
 
 .lots {
-  height: 933px;
   padding: 180px 24px 0;
 
   display: flex;
@@ -157,57 +155,66 @@ section {
 .lots__title {
   font-size: 40px;
   padding-left: 40px;
+
+  /* исправил начертание текста */
+  text-transform: uppercase;
 }
 
-.lots__card-list {
+.lots__list {
   color: white;
 
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 25px;
 
   list-style-type: none;
 }
 
-.lots__card-list li a {
-  text-decoration: none;
+/* теперь я здесь указываю только поведение фона */
+
+.lots__list-item {
+  width: 334px;
+
+  background-size: cover;
+  background-position: center;
 }
 
-.lots__card-list li:first-child {
+/* теперь я здесь указываю только задний фон */
+
+.lots__list-item:first-child {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../images/card-lot-01.jpg);
-  background-position: center;
-  background-size: cover;
 }
 
-.lots__card-list li:nth-child(2) {
+.lots__list-item:nth-child(2) {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../images/card-lot-02.jpg);
-  background-position: center;
-  background-size: cover;
 }
 
-.lots__card-list li:last-child {
+.lots__list-item:last-child {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../images/card-lot-03.jpg);
-  background-position: center;
-  background-size: cover;
 }
 
+.lots__link-card {
+  text-decoration: none;
+}
+
+
 .lots__card {
-  width: 334px;
-  height: 596px;
+  height: 100%;
   padding: 48px 40px;
 
   display: flex;
   flex-direction: column;
+  gap: 30px;
   justify-content: space-between;
 }
 
-.lots__card h3 {
+.lots__card-header {
   font-size: 22px;
   font-weight: bold;
   line-height: 1.2em;
@@ -215,7 +222,7 @@ section {
   text-decoration: underline;
 }
 
-.card-description {
+.lots__card-description {
   font-size: 20px;
   font-weight: normal;
   line-height: 1.2em;
@@ -286,16 +293,18 @@ section {
 .footer {
   background-color: #ffffff;
 
-  height: 180px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 0 50px 82px;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+.footer__contacts {
+  justify-self: start;
 }
 
 .footer__menu-list {
+  justify-self: start;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -304,6 +313,8 @@ section {
 }
 
 .footer__socials {
+  justify-self: end;
+
   width: 240px;
 
   display: flex;

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Оно тебе надо — аукцион вещей, в которые никто не верил</title>
-  
+
   <link rel="stylesheet" href="./fonts/fonts.css">
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/style.css">
@@ -31,7 +31,7 @@
     <address class="menu__contacts">
       <a href="tel:+99995555555">+9 999 555 5555</a>
       <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
-      <p>наб. Принсенграхт 263-<br>265, Амстердам</p> <!--кроме как br не понимаю, как свинуть текст (я не шучу :( )-->
+      <p>наб. Принсенграхт 263-265, Амстердам</p> <!--кроме как br не понимаю, как свинуть текст (я не шучу :( )-->
     </address>
 
   </header>
@@ -39,54 +39,83 @@
   <main class="main-content">
 
     <section class="intro">
-      <div class="cover">
-        <h1 class="intro__header">
-          <span class="intro__text">ОНО</span>
-          <span class="intro__text intro__text--center">ТЕБЕ</span>
-          <span class="intro__text intro__text--right">НАДО</span>
-        </h1>
-      </div>
+      <h1 class="intro__header"> <!-- исправил начертание текста -->
+        <span class="intro__text">Оно</span>
+        <span class="intro__text intro__text--center">тебе</span>
+        <span class="intro__text intro__text--right">надо</span>
+      </h1>
 
       <div class="description">
         <p class="description__text">Аукцион вещей, в которые никто не верил</p>
-        <button class="description__button">СДЕЛАТЬ СТАВКУ</button>
+        <button class="description__button">Сделать ставку</button> <!-- исправил начертание текста -->
       </div>
     </section>
 
 
     <section class="lots">
       <h2 class="lots__title">
-        ЛОТЫ
+        Лоты <!-- исправил начертание текста -->
       </h2>
 
-      <ul class="lots__card-list">
-        <li><a href="#0">
+      <ul class="lots__list">
+        <!-- <li>
+          <a href="#0">
             <article class="lots__card">
               <h3>Фильм режиссёра, который бросил киношколу</h3>
               <div class="card-description">Не просто бросил, а ушёл с первой лекции. Какой была бы ваша ставка, если бы
                 вы не знали, что режиссёр — Пол Томас Андерсон?
               </div>
             </article>
-          </a></li>
-        <li><a href="#0">
+          </a>
+        </li> -->
+
+        <!-- Переделал карточки и соответствующие стили (просто оставил старый код выше, мало ли понадобится для сравнения или ещё что)-->
+
+        <li class="lots__list-item">
+          <a href="#0" class="lots__link-card">
             <article class="lots__card">
-              <h3>Книга, где описан один скучный день из жизни рекламного агента</h3>
-              <div class="card-description">Объёмом почти в тысячу страниц. Иногда без знаков препинания и с переходами
+              <h3 class="lots__card-header">
+                Фильм режиссёра, который бросил киношколу
+              </h3>
+              <p class="lots__card-description">
+                Не просто бросил, а ушёл с первой лекции. Какой была бы ваша ставка, если бы
+                вы не знали, что режиссёр — Пол Томас Андерсон?
+              </p>
+            </article>
+          </a>
+        </li>
+
+        <li class="lots__list-item">
+          <a href="#0" class="lots__link-card">
+            <article class="lots__card">
+              <h3 class="lots__card-header">
+                Книга, где описан один скучный день из жизни рекламного агента
+              </h3>
+              <p class="lots__card-description">
+                Объёмом почти в тысячу страниц. Иногда без знаков препинания и с переходами
                 на древнеанглийский. В ней одновременно рассказывается о 16 июня 1904 года и об истории литературы,
                 начиная с античных времён. И это всё накладывается на эпическую поэму Гомера. Сколько бы вы поставили на
                 «Улисса» Джеймса Джойса?
-              </div>
+              </p>
             </article>
-          </a></li>
-        <li><a href="#0">
+          </a>
+        </li>
+
+        <li class="lots__list-item">
+          <a href="#0" class="lots__link-card">
             <article class="lots__card">
-              <h3>Картина, которую повторит даже 5-летний сын маминой подруги</h3>
-              <div class="card-description">Ну действительно, там линия, тут кружочек, а здесь и вовсе что-то похожее на
+              <h3 class="lots__card-header">
+                Картина, которую повторит даже 5-летний сын маминой подруги
+              </h3>
+              <p class="lots__card-description">
+                Ну действительно, там линия, тут кружочек, а здесь и вовсе что-то похожее на
                 инфузорию-туфельку. Никаких полей, лесов, котиков... Сколько бы вы на такое поставили, если бы не знали,
                 что это — одна из революционных работ Кандинского?
-              </div>
+              </p>
             </article>
-          </a></li>
+          </a>
+        </li>
+
       </ul>
       <a href="#0" class="lots__read-more">посмотреть больше</a>
     </section>
@@ -115,10 +144,11 @@
   </main>
 
   <footer class="footer">
-    <address class="menu__contacts">
+    <address class="menu__contacts footer__contacts">
       <a href="tel:+99995555555">+9 999 555 5555</a>
       <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
-      <p>наб. Принсенграхт 263-265, Амстердам</p> <!--кроме как br не понимаю, как свинуть текст на новую строку (я не шучу :( )-->
+      <p>наб. Принсенграхт 263-265, Амстердам</p>
+      <!--кроме как br не понимаю, как свинуть текст на новую строку (я не шучу :( )-->
     </address>
 
     <nav class="footer__menu">
@@ -130,9 +160,9 @@
     </nav>
 
     <div class="footer__socials">
-      <a href="#0"><img src="./images/yt.svg" alt="" class="footer__socials-icon"></a>
-      <a href="#0"><img src="./images/vk.svg" alt="" class="footer__socials-icon"></a>
-      <a href="#0"><img src="./images/pinterest.svg" alt="" class="footer__socials-icon"></a>
+      <a href="#0"><img src="./images/yt.svg" alt="YT иконка" class="footer__socials-icon"></a>
+      <a href="#0"><img src="./images/vk.svg" alt="VK иконка" class="footer__socials-icon"></a>
+      <a href="#0"><img src="./images/pinterest.svg" alt="Pinterest иконка" class="footer__socials-icon"></a>
     </div>
   </footer>
 
