@@ -24,14 +24,14 @@
       </ul>
     </nav>
 
-    <a href="#0" class="logo">
-      <img src="./images/logo-black.svg" alt="Логотип оно тебе надо">
+    <a href="#0" class="header__link-logo">
+      <img src="./images/logo-black.svg" alt="Логотип оно тебе надо" class="header__logo">
     </a>
 
-    <address class="menu__contacts">
-      <a href="tel:+99995555555">+9 999 555 5555</a>
-      <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
-      <p>наб. Принсенграхт 263-265, Амстердам</p> <!--кроме как br не понимаю, как свинуть текст (я не шучу :( )-->
+    <address class="menu__contacts header__contacts">
+      <a href="tel:+99995555555" class="menu__contacts-item">+9 999 555 5555</a>
+      <a href="mailto:info@sobaka.ge" class="menu__contacts-item">info@sobaka.ge</a>
+      <p class="menu__contacts-item">наб. Принсенграхт 263-265, Амстердам</p>
     </address>
 
   </header>
@@ -73,7 +73,7 @@
 
         <li class="lots__list-item">
           <a href="#0" class="lots__link-card">
-            <article class="lots__card">
+            <article class="lots__card first">
               <h3 class="lots__card-header">
                 Фильм режиссёра, который бросил киношколу
               </h3>
@@ -87,7 +87,7 @@
 
         <li class="lots__list-item">
           <a href="#0" class="lots__link-card">
-            <article class="lots__card">
+            <article class="lots__card secound">
               <h3 class="lots__card-header">
                 Книга, где описан один скучный день из жизни рекламного агента
               </h3>
@@ -103,7 +103,7 @@
 
         <li class="lots__list-item">
           <a href="#0" class="lots__link-card">
-            <article class="lots__card">
+            <article class="lots__card third">
               <h3 class="lots__card-header">
                 Картина, которую повторит даже 5-летний сын маминой подруги
               </h3>
@@ -137,6 +137,14 @@
             на критику, кажущуюся простоту или сложность, сейчас без этих лотов невозможно представить современную
             культуру. Когда в эти вещи не верил никто, продолжали верить их создатели. И сейчас эти лоты стали
             культовыми. </p>
+          <!-- Максим Иванов [старший наставник]
+                14:23
+                Привет, переносы текста можно не приводить к pixel perfect у тебя отличный результат
+
+                14:23
+                можно так сдавать -->
+          
+          <!-- ( надеюсь это так ) -->
         </div>
       </div>
     </section>
@@ -148,7 +156,6 @@
       <a href="tel:+99995555555">+9 999 555 5555</a>
       <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
       <p>наб. Принсенграхт 263-265, Амстердам</p>
-      <!--кроме как br не понимаю, как свинуть текст на новую строку (я не шучу :( )-->
     </address>
 
     <nav class="footer__menu">

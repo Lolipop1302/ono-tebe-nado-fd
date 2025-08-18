@@ -32,38 +32,71 @@ a {
   justify-self: start;
 }
 
-.header__menu-list {
+/* .header__menu-list {
   display: flex;
   justify-content: space-between;
-  gap: 32px;
 
   list-style-type: circle;
 }
 
 .header__menu-item:first-child {
-  /* убрал кружок у первого элемента в header__menu */
   list-style: none;
+} */
+
+.header__menu-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.header__menu-item {
+  position: relative;
+}
+
+/* для каждого не последнего элемента списка добавляю маркер, который выровнял вручную,
+ просто код, который закоменчен выше не даёт контроля над позицией самого маркера и он сильно выбивается из макета
+ пришёл к данному решению с гпт, но наверняка это не самое элегантное решенее. */
+.header__menu-item:not(:last-child)::after {
+  content: "○";
+  scale: 0.7;
+  position: absolute;
+  right: -22px;
+  color: black;
 }
 
 .link--active {
   text-decoration: none;
 }
 
-.logo {
-  width: 130px;
+.header__link-logo {
+  height: 105px;
   justify-self: center;
+}
+
+.header__logo {
+  height: 100%;
 }
 
 .menu__contacts {
   justify-self: end;
 
-  max-width: 230px;
-  /* переделал ширину и избавился от br */
-
+  width: 240px;
   font-size: 18px;
   font-style: normal;
-  line-height: 1.25em;
+  line-height: 1.35em;
 }
+
+.menu__contacts-item:last-child {
+  padding-top: 1px;
+}
+
+.header__contacts {
+  /* переделал ширину и избавился от br */
+  padding-right: 10px;
+}
+
+
 
 /* </header> */
 
@@ -105,12 +138,18 @@ a {
   line-height: 1.15em;
 }
 
+.intro__text:not(:first-child) {
+  /* исправил начертание текста, убавив пустое пространсво, которое есть у последней буквы каждого слова, добавленного браузером. */
+  margin-right: -0.3em;
+}
+
 .intro__text--center {
   text-align: center;
 }
 
 .intro__text--right {
   text-align: right;
+  /* исправил начертание текста */
 }
 
 .description {
@@ -124,8 +163,9 @@ a {
 
 .description__text {
   line-height: 28px;
-  word-spacing: 0.8em;
+  word-spacing: 0.84em;
 }
+
 
 .description__button {
   padding: 12px 32px;
@@ -147,7 +187,7 @@ a {
 
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 27px;
 }
 
 .lots__title {
@@ -172,26 +212,23 @@ a {
 
 .lots__list-item {
   width: 334px;
-
-  background-size: cover;
-  background-position: center;
 }
 
 /* теперь я здесь указываю только задний фон */
 
-.lots__list-item:first-child {
+.lots__card.first {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../images/card-lot-01.jpg);
 }
 
-.lots__list-item:nth-child(2) {
+.lots__card.secound {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../images/card-lot-02.jpg);
 }
 
-.lots__list-item:last-child {
+.lots__card.third {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../images/card-lot-03.jpg);
@@ -208,7 +245,7 @@ a {
 
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 35px;
   justify-content: space-between;
 }
 
@@ -218,6 +255,8 @@ a {
   line-height: 1.2em;
   text-transform: uppercase;
   text-decoration: underline;
+  text-underline-offset: 3.2px;
+  text-decoration-thickness: 0.5px;
 }
 
 .lots__card-description {
@@ -228,6 +267,7 @@ a {
 
 .lots__read-more {
   font-size: 20px;
+  padding-top: 3px;
   padding-left: 40px;
 }
 
@@ -257,12 +297,13 @@ a {
 }
 
 .about__logo {
-  width: 140px;
+  width: 146px;
 }
 
 .about__content {
   width: 693px;
-  margin-top: 133px;
+  margin-top: 136px;
+  padding-right: 3px;
 
   display: flex;
   flex-direction: column;
@@ -281,7 +322,7 @@ a {
   gap: 24px;
 
   font-size: 20px;
-  line-height: 1.24em;
+  line-height: 24px;
 }
 
 /* </about> */
@@ -305,16 +346,15 @@ a {
   flex-direction: column;
   align-items: center;
 
+  font-size: 18px;
   list-style: none;
 }
 
 .footer__socials {
   justify-self: end;
 
-  width: 240px;
-
   display: flex;
-  justify-content: space-between;
+  gap: 48px;
 }
 
 .footer__socials-icon {
